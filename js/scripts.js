@@ -55,3 +55,57 @@
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
 })(jQuery); // End of use strict
+
+
+// ##################################################################
+
+const toggleSwitch = document.querySelector('input[type=checkbox]');
+const toggleIcon = document.getElementById('toggle-icon');
+const textBox = document.getElementById('text-box');
+
+// Dark Mode Styles
+function darkMode() {
+
+    // Simulate an HTTP redirect:
+    window.location.replace("http://www.w3schools.com");
+
+    // Simulate a mouse click:
+    window.location.href = "http://www.w3schools.com";
+
+
+}
+
+// Light Mode Styles
+function lightMode() {
+
+    // Simulate an HTTP redirect:
+    window.location.replace("http://www.w3schools.com");
+
+    // Simulate a mouse click:
+    window.location.href = "http://www.w3schools.com";
+
+
+
+
+}
+
+// Switch Dark/Light theme dynamically
+function switchTheme(event) {
+
+    if (event.target.checked) {
+
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        darkMode();
+
+
+    } else {
+
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        lightMode();
+
+
+    }
+
+}
