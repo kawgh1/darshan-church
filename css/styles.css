@@ -10276,34 +10276,34 @@ body {
   margin-bottom: 5rem;
 }
 
-.projects-section {
+.ministry-section {
   padding: 10rem 0;
 }
-.projects-section .featured-text {
+.ministry-section .featured-text {
   padding: 2rem;
 }
 @media (min-width: 992px) {
-  .projects-section .featured-text {
+  .ministry-section .featured-text {
     padding: 0 0 0 2rem;
     border-left: 0.5rem solid #64a19d;
   }
 }
-.projects-section .project-text {
+.ministry-section .ministry-text {
   padding: 3rem;
   font-size: 90%;
 }
 @media (min-width: 992px) {
-  .projects-section .project-text {
+  .ministry-section .ministry-text {
     padding: 5rem;
   }
-  .projects-section .project-text hr {
+  .ministry-section .ministry-text hr {
     border-color: #64a19d;
     border-width: 0.25rem;
     width: 30%;
   }
 }
 
-.signup-section {
+.gallery-section {
   padding: 10rem 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 98%, #000000 100%), url("../images/stockPhotos/nepalgrass-green.jpg");
   background-position: center;
@@ -10311,7 +10311,7 @@ body {
   background-attachment: scroll;
   background-size: cover;
 }
-.signup-section .form-inline input {
+.gallery-section .form-inline input {
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
   height: auto;
@@ -10338,7 +10338,8 @@ body {
 .contact-section .card hr {
   border-color: #64a19d;
   border-width: 0.25rem;
-  width: 3rem;
+  width: 50%;
+  margin: auto;
 }
 .contact-section .social {
   margin-top: 5rem;
