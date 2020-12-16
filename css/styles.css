@@ -10238,7 +10238,6 @@ body {
     line-height: 2.5rem;
     letter-spacing: 0.3rem;
     background: linear-gradient( rgba(255, 255, 255, .4), rgba(255, 255, 255, 1));
-    -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
             background-clip: text;
   
