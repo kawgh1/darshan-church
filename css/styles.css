@@ -68,7 +68,7 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: rgb(216, 216, 216);
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -201,6 +201,7 @@ figure {
 img {
   vertical-align: middle;
   border-style: none;
+  border-radius: 10px;
 }
 
 svg {
@@ -10127,7 +10128,7 @@ body {
 
 #mainNav {
   min-height: 3.5rem;
-  background-color: #fff;
+  background-color: rgb(216, 216, 216);
 }
 #mainNav .navbar-toggler {
   font-size: 80%;
