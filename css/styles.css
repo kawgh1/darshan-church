@@ -10163,15 +10163,15 @@ body {
   }
   #mainNav .navbar-brand {
     padding: 0.5rem 0;
-    color: rgba(216, 216, 216, 0.5);
+    color: rgba(255, 255, 255, 0.9);
   }
   #mainNav .nav-link {
     transition: none;
     padding: 2rem 1.5rem;
-    color: rgba(216, 216, 216, 0.5);
+    color: rgba(255, 255, 255, 0.9);
   }
   #mainNav .nav-link:hover {
-    color: rgba(216, 216, 216, 0.75);
+    color: rgba(236, 236, 236, 0.5);
   }
   #mainNav .nav-link:active {
     color: #fff;
