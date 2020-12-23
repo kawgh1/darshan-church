@@ -10128,7 +10128,7 @@ body {
 
 #mainNav {
   min-height: 3.5rem;
-  background-color: rgb(216, 216, 216);
+  background-color: whitesmoke;
 }
 #mainNav .navbar-toggler {
   font-size: 80%;
@@ -10163,7 +10163,7 @@ body {
   }
   #mainNav .navbar-brand {
     padding: 0.5rem 0;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 1);
   }
   #mainNav .nav-link {
     transition: none;
@@ -10405,3 +10405,6 @@ body {
   transform: translateY(-2px);
   color: white;
 }
+
+
+
