@@ -1,0 +1,152 @@
+[1mdiff --git a/calendar.html b/calendar.html[m
+[1mdeleted file mode 100644[m
+[1mindex 468b6a9..0000000[m
+[1m--- a/calendar.html[m
+[1m+++ /dev/null[m
+[36m@@ -1,325 +0,0 @@[m
+[31m-<!doctype html>[m
+[31m-<html lang="en">[m
+[31m-[m
+[31m-<head>[m
+[31m-    <!-- Required meta tags -->[m
+[31m-[m
+[31m-    <meta charset="utf-8" />[m
+[31m-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />[m
+[31m-    <meta name="description" content="" />[m
+[31m-    <meta name="author" content="" />[m
+[31m-    <title>Darshan Church | Beltar Nepal</title>[m
+[31m-    <link rel="icon" type="image/x-icon" href="images/Darshanfavicon-50x50.png" />[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-    <!-- Font Awesome icons (free version)-->[m
+[31m-    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>[m
+[31m-    <!-- Google fonts-->[m
+[31m-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />[m
+[31m-    <link[m
+[31m-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"[m
+[31m-        rel="stylesheet" />[m
+[31m-[m
+[31m-    <!-- Bootstrap CSS -->[m
+[31m-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"[m
+[31m-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">[m
+[31m-    <!-- Core theme CSS (includes Bootstrap)-->[m
+[31m-    <link href="css/styles.css" rel="stylesheet" />[m
+[31m-[m
+[31m-    <!-- Bootstrap core JS-->[m
+[31m-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>[m
+[31m-    <!-- Third party plugin JS-->[m
+[31m-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>[m
+[31m-[m
+[31m-[m
+[31m-    <!-- Core theme JS-->[m
+[31m-    <script src="js/scripts.js"></script>[m
+[31m-[m
+[31m-[m
+[31m-    <!-- Calendar Code -->[m
+[31m-[m
+[31m-    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">[m
+[31m-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>[m
+[31m-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->[m
+[31m-[m
+[31m-    <script src="calendar.js"></script>[m
+[31m-    <script>[m
+[31m-        $(document).ready(function () {[m
+[31m-            var date = new Date();[m
+[31m-            var d = date.getDate();[m
+[31m-            var m = date.getMonth();[m
+[31m-            var y = date.getFullYear();[m
+[31m-            /*  className colors[m
+[31m-              [m
+[31m-            className: default(transparent), important(red), chill(pink), success(green), info(blue)[m
+[31m-              [m
+[31m-            */[m
+[31m-            /* initialize the external events[m
+[31m-            -----------------------------------------------------------------*/[m
+[31m-            $('#external-events div.external-event').each(function () {[m
+[31m-                // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)[m
+[31m-                // it doesn't need to have a start or end[m
+[31m-                var eventObject = {[m
+[31m-                    title: $.trim($(this).text()) // use the element's text as the event title[m
+[31m-                };[m
+[31m-                // store the Event Object in the DOM element so we can get to it later[m
+[31m-                $(this).data('eventObject', eventObject);[m
+[31m-                // make the event draggable using jQuery UI[m
+[31m-                $(this).draggable({[m
+[31m-                    zIndex: 999,[m
+[31m-                    revert: true, // will cause the event to go back to its[m
+[31m-                    revertDuration: 0 //  original position after the drag[m
+[31m-                });[m
+[31m-            });[m
+[31m-            /* initialize the calendar[m
+[31m-            -----------------------------------------------------------------*/[m
+[31m-            var calendar = $('#calendar').fullCalendar({[m
+[31m-                header: {[m
+[31m-                    left: 'title',[m
+[31m-                    center: 'agendaDay,agendaWeek,month',[m
+[31m-                    right: 'prev,next today'[m
+[31m-                },[m
+[31m-                editable: true,[m
+[31m-                firstDay: 0, //  1(Monday) this can be changed to 0(Sunday) for the USA system[m
+[31m-                selectable: true,[m
+[31m-                defaultView: 'month',[m
+[31m-                axisFormat: 'h:mm',[m
+[31m-                columnFormat: {[m
+[31m-                    month: 'ddd', // Mon[m
+[31m-                    week: 'ddd d', // Mon 7[m
+[31m-                    day: 'dddd M/d', // Monday 9/7[m
+[31m-                    agendaDay: 'dddd d'[m
+[31m-                },[m
+[31m-                titleFormat: {[m
+[31m-                    month: 'MMMM yyyy', // September 2009[m
+[31m-                    week: "MMMM yyyy", // September 2009[m
+[31m-                    day: 'MMMM yyyy' // Tuesday, Sep 8, 2009[m
+[31m-                },[m
+[31m-                allDaySlot: false,[m
+[31m-                selectHelper: true,[m
+[31m-                select: function (start, end, allDay) {[m
+[31m-                    var title = prompt('Event Title:');[m
+[31m-                    if (title) {[m
+[31m-                        calendar.fullCalendar('renderEvent', {[m
+[31m-                            title: title,[m
+[31m-                            start: start,[m
+[31m-                            end: end,[m
+[31m-                            allDay: allDay[m
+[31m-                        },[m
+[31m-                            true // make the event "stick"[m
+[31m-                        );[m
+[31m-                    }[m
+[31m-                    calendar.fullCalendar('unselect');[m
+[31m-                },[m
+[31m-                droppable: true, // this allows things to be dropped onto the calendar !!![m
+[31m-                drop: function (date, allDay) { // this function is called when something is dropped[m
+[31m-                    // retrieve the dropped element's stored Event Object[m
+[31m-                    var originalEventObject = $(this).data('eventObject');[m
+[31m-                    // we need to copy it, so that multiple events don't have a reference to the same object[m
+[31m-                    var copiedEventObject = $.extend({}, originalEventObject);[m
+[31m-                    // assign it the date that was reported[m
+[31m-                    copiedEventObject.start = date;[m
+[31m-                    copiedEventObject.allDay = allDay;[m
+[31m-                    // render the event on the calendar[m
+[31m-                    // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)[m
+[31m-                    $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);[m
+[31m-                    // is the "remove after drop" checkbox checked?[m
+[31m-                    if ($('#drop-remove').is(':checked')) {[m
+[31m-                        // if so, remove the element from the "Draggable Events" list[m
+[31m-                        $(this).remove();[m
+[31m-                    }[m
+[31m-                },[m
+[31m-                events: [{[m
+[31m-                    title: 'All Day Event',[m
+[31m-                    start: new Date(y, m, 1)[m
+[31m-                },[m
+[31m-                {[m
+[31m-                    id: 999,[m
+[31m-                    title: 'Repeating Event',[m
+[31m-                    start: new Date(y, m, d - 3, 16, 0),[m
+[31m-                    allDay: false,[m
+[31m-                    className: 'info'[m
+[31m-                },[m
+[31m-                {[m
+[31m-                    id: 999,[m
+[31m-                    title: 'Repeating Eve
