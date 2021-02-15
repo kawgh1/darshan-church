@@ -38,6 +38,35 @@
     <link href="css/styles.css" rel="stylesheet" />
 
 
+    <!-- Youtube video carousel in About Us section -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script>
+        var channelID = "UCMYts-ss9VDCs1JcZXmUwMw";
+        var reqURL = "https://www.youtube.com/feeds/videos.xml?channel_id=";
+        // first newest video
+        $.getJSON("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(reqURL) + channelID, function (data) {
+            var link = data.items[0].link;
+            var id = link.substr(link.indexOf("=") + 1);
+            $("#youtube_video1").attr("src", "https://youtube.com/embed/" + id + "?controls=0&showinfo=0&rel=0");
+        });
+
+        // second newest video
+        $.getJSON("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(reqURL) + channelID, function (data) {
+            var link = data.items[1].link;
+            var id = link.substr(link.indexOf("=") + 1);
+            $("#youtube_video2").attr("src", "https://youtube.com/embed/" + id + "?controls=0&showinfo=0&rel=0");
+        });
+
+        // third newest video
+        $.getJSON("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(reqURL) + channelID, function (data) {
+            var link = data.items[2].link;
+            var id = link.substr(link.indexOf("=") + 1);
+            $("#youtube_video3").attr("src", "https://youtube.com/embed/" + id + "?controls=0&showinfo=0&rel=0");
+        });
+    </script>
+
+
 
 
 </head>
@@ -123,6 +152,8 @@
 
     <!--  -->
 
+
+
     <!-- About-->
     <section class="about-section text-center" id="about">
         <div class="container">
@@ -130,6 +161,49 @@
             <div class="mx-auto text-center">
                 <h1 class="mx-auto my-0 text-uppercase text-white-90">About Us</h1>
                 <hr>
+
+                <!-- Youtube Video Carousel -->
+                <h2 class="text-white-90 mb-4 text-uppercase" style="font-size: 1.5rem;">
+                    Newest Updates!
+                </h2>
+
+                <!-- Carousel -->
+                <div id="carouselExampleCaptions1" class="carousel slide" interval="false">
+                    <ol class="carousel-indicators">
+                        <li data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="0" class="active"></li>
+                        <li data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="1"></li>
+                        <li data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="2"></li>
+
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <iframe id="youtube_video1" width="80%" height="500" frameborder="0" allowfullscreen
+                                alt="youtube video 1"></iframe>
+                        </div>
+                        <div class="carousel-item">
+                            <iframe id="youtube_video2" width="80%" height="500" frameborder="0" allowfullscreen
+                                alt="youtube video 2"></iframe>
+                        </div>
+                        <div class="carousel-item">
+                            <iframe id="youtube_video3" width="80%" height="500" frameborder="0" allowfullscreen
+                                alt="youtube video 3"></iframe>
+                        </div>
+
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleCaptions1" role="button"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleCaptions1" role="button"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </a>
+                </div>
+
+                <!-- End Carousel -->
+                <br><br><br>
 
                 <h3 class="text-white-90 mb-4" style="font-size: 1.2rem;">
                     Our mission is to serve
