@@ -1,17 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+    <head>
+        <!-- Required meta tags -->
 
-<head>
-    <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta
+            name="description"
+            content="Welcome to Darshan Church - serving the Beltar Chaudandigadhi region of Nepal and preaching the good news of Jesus Christ"
+        />
+        <meta name="author" content="Darshan Church" />
+        <title>Darshan Church | Beltar Nepal</title>
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="images/Darshanfavicon-50x50.png"
+        />
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Darshan Church | Beltar Nepal</title>
-    <link rel="icon" type="image/x-icon" href="images/Darshanfavicon-50x50.png" />
-
-    <!-- <style>
+        <!-- <style>
         body {
             background: url("/images/stockPhotos/nepalcross-green.jpg") no-repeat center center fixed;
             -webkit-background-size: cover;
@@ -21,489 +30,963 @@
         }
     </style> -->
 
+        <!-- Font Awesome icons (free version)-->
+        <script
+            src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
+            crossorigin="anonymous"
+        ></script>
+        <!-- Google fonts-->
+        <link
+            href="https://fonts.googleapis.com/css?family=Varela+Round"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet"
+        />
 
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+            crossorigin="anonymous"
+        />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
 
-    <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet" />
+        <!-- Youtube video carousel in About Us section -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+        <script>
+            var channelID = "UCMYts-ss9VDCs1JcZXmUwMw";
+            var reqURL = "https://www.youtube.com/feeds/videos.xml?channel_id=";
+            // first newest video
+            $.getJSON(
+                "https://api.rss2json.com/v1/api.json?rss_url=" +
+                    encodeURIComponent(reqURL) +
+                    channelID,
+                function (data) {
+                    var link = data.items[0].link;
+                    var id = link.substr(link.indexOf("=") + 1);
+                    $("#youtube_video1").attr(
+                        "src",
+                        "https://youtube.com/embed/" +
+                            id +
+                            "?controls=0&showinfo=0&rel=0"
+                    );
+                }
+            );
 
+            // second newest video
+            $.getJSON(
+                "https://api.rss2json.com/v1/api.json?rss_url=" +
+                    encodeURIComponent(reqURL) +
+                    channelID,
+                function (data) {
+                    var link = data.items[1].link;
+                    var id = link.substr(link.indexOf("=") + 1);
+                    $("#youtube_video2").attr(
+                        "src",
+                        "https://youtube.com/embed/" +
+                            id +
+                            "?controls=0&showinfo=0&rel=0"
+                    );
+                }
+            );
 
-    <!-- Youtube video carousel in About Us section -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            // third newest video
+            $.getJSON(
+                "https://api.rss2json.com/v1/api.json?rss_url=" +
+                    encodeURIComponent(reqURL) +
+                    channelID,
+                function (data) {
+                    var link = data.items[2].link;
+                    var id = link.substr(link.indexOf("=") + 1);
+                    $("#youtube_video3").attr(
+                        "src",
+                        "https://youtube.com/embed/" +
+                            id +
+                            "?controls=0&showinfo=0&rel=0"
+                    );
+                }
+            );
+        </script>
+    </head>
 
-    <script>
-        var channelID = "UCMYts-ss9VDCs1JcZXmUwMw";
-        var reqURL = "https://www.youtube.com/feeds/videos.xml?channel_id=";
-        // first newest video
-        $.getJSON("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(reqURL) + channelID, function (data) {
-            var link = data.items[0].link;
-            var id = link.substr(link.indexOf("=") + 1);
-            $("#youtube_video1").attr("src", "https://youtube.com/embed/" + id + "?controls=0&showinfo=0&rel=0");
-        });
+    <body id="page-top">
+        <!-- help load background image faster -->
+        <img
+            src="../images/stockPhotos/nepalcross-green.jpg"
+            alt=""
+            style="display: none"
+        />
+        <!-- Navigation-->
+        <nav
+            class="navbar navbar-expand-lg navbar-light fixed-top"
+            id="mainNav"
+        >
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="index.html">
+                    <img
+                        class="img-fluid"
+                        src="images/Darshanfavicon-50x50.png"
+                        style="border-radius: 50%"
+                        alt="Darshan Logo"
+                    />
+                    Darshan Church</a
+                >
 
-        // second newest video
-        $.getJSON("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(reqURL) + channelID, function (data) {
-            var link = data.items[1].link;
-            var id = link.substr(link.indexOf("=") + 1);
-            $("#youtube_video2").attr("src", "https://youtube.com/embed/" + id + "?controls=0&showinfo=0&rel=0");
-        });
+                <button
+                    class="navbar-toggler navbar-toggler-right"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="nepali.html"
+                                style="
+                                    line-height: 20px;
+                                    font-size: 1.1rem;
+                                    font-weight: bold;
+                                    text-decoration: underline;
+                                    color: #64a19d;
+                                "
+                                >नेपाली (Nēpālī)
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="
+                                    nav-link
+                                    js-scroll-trigger
+                                    dropdown-toggle
+                                "
+                                id="navbarDropdown"
+                                href="#about"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                >About</a
+                            >
+                            <ul
+                                class="dropdown-menu"
+                                aria-labelledby="navbarDropdown"
+                            >
+                                <li>
+                                    <a class="dropdown-item" href="#about"
+                                        >About</a
+                                    >
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="about.html"
+                                        >Our Story</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
 
-        // third newest video
-        $.getJSON("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(reqURL) + channelID, function (data) {
-            var link = data.items[2].link;
-            var id = link.substr(link.indexOf("=") + 1);
-            $("#youtube_video3").attr("src", "https://youtube.com/embed/" + id + "?controls=0&showinfo=0&rel=0");
-        });
-    </script>
+                        <li class="nav-item dropdown">
+                            <a
+                                class="
+                                    nav-link
+                                    js-scroll-trigger
+                                    dropdown-toggle
+                                "
+                                id="navbarDropdown"
+                                role="button"
+                                href="#ministry"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                >Ministry</a
+                            >
+                            <ul
+                                class="dropdown-menu"
+                                aria-labelledby="navbarDropdown"
+                            >
+                                <li>
+                                    <a class="dropdown-item" href="#ministry"
+                                        >Ministry</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="schedule.html"
+                                        >Weekly Schedule</a
+                                    >
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="support.html"
+                                        >Support Us</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="#gallery"
+                                >Photo Gallery</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link js-scroll-trigger"
+                                href="#contact"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">
+                        Darshan<br />Church
+                    </h1>
 
+                    <h2
+                        class="submasthead text-white-70 mx-auto mt-5 mb-5"
+                        style="line-height: 1.6rem"
+                    >
+                        Jesus said to them,<br />'I am the light of the
+                        world.<br /><br />Anyone who follows Me will never walk
+                        in darkness but will have the light of life.'
+                        <br /><br />
+                        John 8:12
+                        <hr />
+                        <a
+                            class="btn btn-primary js-scroll-trigger"
+                            href="#about"
+                            >Let's Go!</a
+                        >
+                    </h2>
+                </div>
+            </div>
+        </header>
 
+        <!--  -->
 
-</head>
+        <!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container">
+                <div class="mx-auto text-center">
+                    <img
+                        class="img-fluid mb-5"
+                        src="images/darshanBanner3-copy.png"
+                        alt="Darshan Logo"
+                    />
+                    <br /><br />
+                </div>
 
-<body id="page-top">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="index.html">
-                <img class="img-fluid" src="images/Darshanfavicon-50x50.png" style="border-radius: 50%;"
-                    alt="Darshan Logo" />
-                Darshan Church</a>
+                <div class="mx-auto text-center">
+                    <h1
+                        class="mx-auto my-0 text-uppercase text-white-90"
+                        style="font-size: 3rem"
+                    >
+                        About Us
+                    </h1>
+                    <hr />
 
+                    <!-- Youtube Video Carousel -->
+                    <h2
+                        class="text-white-90 mb-4 text-uppercase"
+                        style="font-size: 2rem"
+                    >
+                        Newest Updates!
+                    </h2>
 
-
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-
-
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="nepali.html"
-                            style="line-height: 20px; font-size: 1.1rem; font-weight: bold; text-decoration: underline; color: #64a19d;">नेपाली
-                            (Nēpālī)
+                    <!-- Carousel -->
+                    <div
+                        id="carouselExampleCaptions1"
+                        class="carousel slide"
+                        interval="false"
+                    >
+                        <ol class="carousel-indicators">
+                            <li
+                                data-bs-target="#carouselExampleCaptions1"
+                                data-bs-slide-to="0"
+                                class="active"
+                            ></li>
+                            <li
+                                data-bs-target="#carouselExampleCaptions1"
+                                data-bs-slide-to="1"
+                            ></li>
+                            <li
+                                data-bs-target="#carouselExampleCaptions1"
+                                data-bs-slide-to="2"
+                            ></li>
+                        </ol>
+                        <div class="carousel-inner" style="width: 100%">
+                            <div class="carousel-item active">
+                                <iframe
+                                    id="youtube_video1"
+                                    width="100%"
+                                    height="400"
+                                    frameborder="0"
+                                    allowfullscreen
+                                    alt="youtube video 1"
+                                ></iframe>
+                            </div>
+                            <div class="carousel-item">
+                                <iframe
+                                    id="youtube_video2"
+                                    width="100%"
+                                    height="400"
+                                    frameborder="0"
+                                    allowfullscreen
+                                    alt="youtube video 2"
+                                ></iframe>
+                            </div>
+                            <div class="carousel-item">
+                                <iframe
+                                    id="youtube_video3"
+                                    width="100%"
+                                    height="400"
+                                    frameborder="0"
+                                    allowfullscreen
+                                    alt="youtube video 3"
+                                ></iframe>
+                            </div>
+                        </div>
+                        <a
+                            class="carousel-control-prev"
+                            href="#carouselExampleCaptions1"
+                            role="button"
+                            data-bs-slide="prev"
+                        >
+                            <span
+                                class="carousel-control-prev-icon"
+                                aria-hidden="true"
+                            ></span>
+                            <span class="visually-hidden">Previous</span>
                         </a>
-                    </li>
-                    <li class="nav-item dropdown"><a class="nav-link js-scroll-trigger dropdown-toggle"
-                            id="navbarDropdown" href="#about" data-bs-toggle="dropdown" aria-expanded="false">About</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#about">About</a></li>
-                            <li><a class="dropdown-item" href="about.html">Our Story</a></li>
-                        </ul>
+                        <a
+                            class="carousel-control-next"
+                            href="#carouselExampleCaptions1"
+                            role="button"
+                            data-bs-slide="next"
+                        >
+                            <span
+                                class="carousel-control-next-icon"
+                                aria-hidden="true"
+                            ></span>
+                            <span class="visually-hidden">Next</span>
+                        </a>
+                    </div>
 
-                    </li>
+                    <!-- End Carousel -->
+                    <br /><br /><br />
 
-                    <li class="nav-item dropdown"><a class="nav-link js-scroll-trigger dropdown-toggle"
-                            id="navbarDropdown" role="button" href="#ministry" data-bs-toggle="dropdown"
-                            aria-expanded="false">Ministry</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#ministry">Ministry</a></li>
-                            <li><a class="dropdown-item" href="schedule.html">Weekly Schedule</a></li>
-                            <li><a class="dropdown-item" href="support.html">Support Us</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#gallery">Photo Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                    <h3 class="text-white-90 mb-4" style="font-size: 1.2rem">
+                        Our mission is to serve the people of rural Nepal and
+                        bring them the Good News of Jesus Christ.
+                    </h3>
 
+                    <img
+                        class="img-fluid"
+                        src="images/DarshanLogo.jpg"
+                        style="border-radius: 50%; margin: 1px"
+                        alt="Darshan Logo"
+                    />
+                    <img
+                        class="img-fluid"
+                        src="images/pastor.jpg"
+                        alt="Pastor Indra"
+                        style="height: 300px; border-radius: 50%; margin: 1px"
+                    /><br />
+                    <br /><br />
+                </div>
 
-                </ul>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h3
+                            class="text-white-90 mb-4"
+                            style="font-size: 1.1rem"
+                        >
+                            Darshan Church was founded in 1999 in <br />
+                            Chaudandgadhi, Udayapur <br />
+                            - Beltar, Nepal.
+                        </h3>
+                        <p
+                            class="text-white-90 mb-4"
+                            style="font-size: 0.8rem; padding: 0.5rem"
+                        >
+                            Darshan means "Vision" in Nepali.
+                        </p>
 
+                        <a
+                            class="btn btn-primary js-scroll-trigger mb-5"
+                            href="about.html"
+                            >Read Our Story</a
+                        >
 
+                        <!--<p class="text-white-70 mb-4" style="font-size: 20px;">
+
+                    </p> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Ministry-->
+        <section class="ministry-section bg-light pt-1 pb-5" id="ministry">
+            <div class="container">
+                <div class="mx-auto text-center">
+                    <br /><br />
+                    <br />
+                    <h1
+                        class="mx-auto my-0 text-uppercase"
+                        style="font-size: 3rem"
+                    >
+                        Ministry
+                    </h1>
+                    <hr />
+                    <img
+                        class="img-fluid"
+                        src="images/darshan-long-banner-2.png"
+                        style="opacity: 0.9"
+                        alt="Darshan Logo"
+                    />
+                    <hr />
+                    <br /><br />
+                </div>
+
+                <!-- Featured ministry Row-->
+                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                    <div class="col-xl-8 col-lg-7">
+                        <img
+                            class="img-fluid mb-3 mb-lg-0"
+                            src="images/stockPhotos/nepal-map-physical1.jpg"
+                            alt=""
+                        />
+                        <hr />
+                    </div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>Where We Serve</h4>
+                            <p class="text-black-50 mb-0">
+                                We are located in Chaudandgadhi Municipality,
+                                Udayapur in Southeast Nepal.
+                            </p>
+
+                            <br />
+                            <a
+                                class="btn btn-primary js-scroll-trigger mt-2"
+                                href="schedule.html"
+                                >Weekly Schedule</a
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ministry One Row-->
+                <div class="row justify-content-center no-gutters">
+                    <div class="col-lg-6">
+                        <img
+                            class="img-fluid"
+                            style="border-radius: 0px"
+                            src="images/churchPhotos/OutsideBibleStudy.jpg"
+                            alt=""
+                        />
+                    </div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 ministry">
+                            <div class="d-flex h-100">
+                                <div
+                                    class="
+                                        ministry-text
+                                        w-100
+                                        my-auto
+                                        text-center text-lg-right
+                                    "
+                                >
+                                    <h4 class="text-white">
+                                        Service to Others
+                                    </h4>
+                                    <p class="mb-0 text-white-70">
+                                        We work with families, children, the
+                                        elderly and people with disabilities to
+                                        meet their needs and share the joy of
+                                        the Lord!
+                                    </p>
+                                    <hr class="d-none d-lg-block mb-0 mr-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ministry Two Row-->
+                <div class="row justify-content-center no-gutters">
+                    <div class="col-lg-6">
+                        <img
+                            class="img-fluid"
+                            style="border-radius: 0px"
+                            src="images/churchPhotos/WorkProject.jpg"
+                            alt=""
+                        />
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 ministry">
+                            <div class="d-flex h-100">
+                                <div
+                                    class="
+                                        ministry-text
+                                        w-100
+                                        my-auto
+                                        text-center text-lg-left
+                                    "
+                                >
+                                    <h4 class="text-white">
+                                        Let's Get To Work!
+                                    </h4>
+                                    <p class="mb-0 text-white-70">
+                                        We don't travel empty handed - we come
+                                        to work! Whatever we can do to help our
+                                        communities we will do!
+                                    </p>
+                                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ministry Three Row-->
+                <div class="row justify-content-center no-gutters mb-2 mb-lg-0">
+                    <div class="col-lg-6">
+                        <img
+                            class="img-fluid"
+                            style="border-radius: 0px"
+                            src="images/churchPhotos/PastorOnTheRoad.jpg"
+                            alt=""
+                        />
+                    </div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 ministry">
+                            <div class="d-flex h-100">
+                                <div
+                                    class="
+                                        ministry-text
+                                        w-100
+                                        my-auto
+                                        text-center text-lg-right
+                                    "
+                                >
+                                    <h4 class="text-white">The Good News</h4>
+                                    <p class="mb-0 text-white-70">
+                                        We serve rural villages who have never
+                                        heard the Gospel or have no local church
+                                        for worship.
+                                    </p>
+                                    <hr class="d-none d-lg-block mb-0 mr-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
             </div>
 
-        </div>
-
-    </nav>
-
-
-
-    <!-- Masthead-->
-    <header class="masthead">
-        <div class="container d-flex h-100 align-items-center">
-
             <div class="mx-auto text-center">
-                <h1 class="mx-auto my-0 text-uppercase">Darshan<br>Church</h1>
-
-                <h2 class="submasthead text-white-70 mx-auto mt-5 mb-5" style="line-height: 1.6rem;">
-                    Jesus said to them,<br>'I am the light of the world.<br><br>Anyone who follows Me
-                    will never walk in darkness but will have the light of life.'
-                    <br><br>
-                    John
-                    8:12
-                    <hr>
-                    <a class="btn btn-primary js-scroll-trigger" href="#about">Let's Go!</a>
-                </h2>
-
+                <a
+                    class="btn btn-primary js-scroll-trigger mt-5"
+                    href="support.html"
+                    >Support Our Ministry</a
+                >
             </div>
-        </div>
-    </header>
-
-    <!--  -->
-
-
-
-    <!-- About-->
-    <section class="about-section text-center" id="about">
-        <div class="container">
-            <div class="mx-auto text-center">
-
-                <img class="img-fluid mb-5" src="images/darshanBanner3-copy.png" alt="Darshan Logo" />
-                <br><br>
-            </div>
-
-            <div class="mx-auto text-center">
-                <h1 class="mx-auto my-0 text-uppercase text-white-90" style="font-size: 3rem;">About Us</h1>
-                <hr>
-
-                <!-- Youtube Video Carousel -->
-                <h2 class="text-white-90 mb-4 text-uppercase" style="font-size: 2rem;">
-                    Newest Updates!
-                </h2>
+        </section>
+        <!-- Gallery-->
+        <section class="gallery-section" id="gallery">
+            <div class="container">
+                <div class="mx-auto text-center">
+                    <br />
+                    <h1
+                        class="mx-auto my-0 text-uppercase text-white-90"
+                        style="font-size: 3rem"
+                    >
+                        Photo Gallery
+                    </h1>
+                    <hr />
+                </div>
 
                 <!-- Carousel -->
-                <div id="carouselExampleCaptions1" class="carousel slide" interval="false">
+                <div
+                    id="carouselExampleCaptions"
+                    class="carousel slide"
+                    data-bs-ride="carousel"
+                >
                     <ol class="carousel-indicators">
-                        <li data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="0" class="active"></li>
-                        <li data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="1"></li>
-                        <li data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="2"></li>
-
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="0"
+                            class="active"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="1"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="2"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="3"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="4"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="5"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="6"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="7"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="8"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="9"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="10"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="11"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="12"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="13"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="14"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="15"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="16"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="17"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="18"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="19"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="20"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="21"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="22"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="23"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="24"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="25"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="26"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="27"
+                        ></li>
+                        <li
+                            data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide-to="28"
+                        ></li>
                     </ol>
-                    <div class="carousel-inner" style="width: 100%;">
+                    <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <iframe id="youtube_video1" width="100%" height="400" frameborder="0" allowfullscreen
-                                alt="youtube video 1"></iframe>
+                            <img
+                                src="images/churchPhotos2021/IndraAndMan.jpg"
+                                class="d-block w-100"
+                                alt="Past Indra And Man"
+                            />
                         </div>
                         <div class="carousel-item">
-                            <iframe id="youtube_video2" width="100%" height="400" frameborder="0" allowfullscreen
-                                alt="youtube video 2"></iframe>
+                            <img
+                                src="images/churchPhotos2021/baptism.jpg"
+                                class="d-block w-100"
+                                alt="baptism"
+                            />
                         </div>
                         <div class="carousel-item">
-                            <iframe id="youtube_video3" width="100%" height="400" frameborder="0" allowfullscreen
-                                alt="youtube video 3"></iframe>
+                            <img
+                                src="images/churchPhotos2021/disabled.jpg"
+                                class="d-block w-100"
+                                alt="disabled man"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos2021/firepit.jpg"
+                                class="d-block w-100"
+                                alt="firepit"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos2021/food.jpg"
+                                class="d-block w-100"
+                                alt="food"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos2021/happygirl.jpg"
+                                class="d-block w-100"
+                                alt="happy girl"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos2021/jail.jpg"
+                                class="d-block w-100"
+                                alt="jail"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos2021/kids.jpg"
+                                class="d-block w-100"
+                                alt="kids"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos2021/newchurch.jpg"
+                                class="d-block w-100"
+                                alt="new church"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos2021/villagechurch.jpg"
+                                class="d-block w-100"
+                                alt="village church"
+                            />
+                        </div>
+                        <!-- older photos -->
+
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/sujan1.jpeg"
+                                class="d-block w-100"
+                                alt="Bible Study"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/sujan10.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/sujan4.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/sujan5.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/sujan6.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/sujan7.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/sujan8.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/sujan9.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/SujhanOnTheRoad.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
                         </div>
 
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/ChurchOutside2.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/HappyBirthday.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/ChurchService.jpg"
+                                class="d-block w-100"
+                                alt="Church Service"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/Village.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/OnTheRoad.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/YouthBibleStudy.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/Dresses.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/Family.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/IntoTheField.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
+                        </div>
+                        <div class="carousel-item">
+                            <img
+                                src="images/churchPhotos/IntoTheCity.jpg"
+                                class="d-block w-100"
+                                alt="Church Outside"
+                            />
+                        </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleCaptions1" role="button"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <a
+                        class="carousel-control-prev"
+                        href="#carouselExampleCaptions"
+                        role="button"
+                        data-bs-slide="prev"
+                    >
+                        <span
+                            class="carousel-control-prev-icon"
+                            aria-hidden="true"
+                        ></span>
                         <span class="visually-hidden">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleCaptions1" role="button"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <a
+                        class="carousel-control-next"
+                        href="#carouselExampleCaptions"
+                        role="button"
+                        data-bs-slide="next"
+                    >
+                        <span
+                            class="carousel-control-next-icon"
+                            aria-hidden="true"
+                        ></span>
                         <span class="visually-hidden">Next</span>
                     </a>
+                    <hr />
                 </div>
 
                 <!-- End Carousel -->
-                <br><br><br>
+                <br /><br /><br />
 
-                <h3 class="text-white-90 mb-4" style="font-size: 1.2rem;">
-                    Our mission is to serve
-                    the people of rural Nepal and
-
-                    bring them the Good News of Jesus Christ.
-                </h3>
-
-
-
-                <img class="img-fluid" src="images/DarshanLogo.jpg" style="border-radius: 50%; margin: 1px;"
-                    alt="Darshan Logo" />
-                <img class="img-fluid" src="images/pastor.jpg" alt="Pastor Indra"
-                    style="height: 300px; border-radius: 50%; margin: 1px;" /><br>
-                <br><br>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h3 class="text-white-90 mb-4" style="font-size: 1.1rem;">Darshan Church was founded in 1999 in <br>
-                        Chaudandgadhi,
-                        Udayapur <br> - Beltar, Nepal.
-                    </h3>
-                    <p class="text-white-90 mb-4" style="font-size: .8rem; padding: .5rem;">
-                        Darshan means "Vision" in Nepali.
-                    </p>
-
-
-                    <a class="btn btn-primary js-scroll-trigger mb-5" href="about.html">Read Our Story</a>
-
-
-                    <!--<p class="text-white-70 mb-4" style="font-size: 20px;">
-
-                    </p> -->
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Ministry-->
-    <section class="ministry-section bg-light pt-1 pb-5" id="ministry">
-        <div class="container">
-
-            <div class="mx-auto text-center">
-
-
-                <br><br>
-                <br>
-                <h1 class="mx-auto my-0 text-uppercase" style="font-size: 3rem;">Ministry</h1>
-                <hr>
-                <img class="img-fluid" src="images/darshan-long-banner-2.png" style="opacity: .9;" alt="Darshan Logo" />
-                <hr>
-                <br><br>
-            </div>
-
-
-
-
-            <!-- Featured ministry Row-->
-            <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-                <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0"
-                        src="images/stockPhotos/nepal-map-physical1.jpg" alt="" />
-                    <hr>
-                </div>
-                <div class="col-xl-4 col-lg-5">
-                    <div class="featured-text text-center text-lg-left">
-                        <h4>Where We Serve</h4>
-                        <p class="text-black-50 mb-0">We are located in Chaudandgadhi Municipality, Udayapur in
-                            Southeast Nepal.</p>
-
-                        <br>
-                        <a class="btn btn-primary js-scroll-trigger mt-2" href="schedule.html">Weekly Schedule</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Ministry One Row-->
-            <div class="row justify-content-center no-gutters">
-                <div class="col-lg-6"><img class="img-fluid" src="images/churchPhotos/OutsideBibleStudy.jpg" alt="" />
-                </div>
-                <div class="col-lg-6 order-lg-first">
-                    <div class="bg-black text-center h-100 ministry">
-                        <div class="d-flex h-100">
-                            <div class="ministry-text w-100 my-auto text-center text-lg-right">
-                                <h4 class="text-white"> Service to Others</h4>
-                                <p class="mb-0 text-white-70">We work
-                                    with families, children, the elderly and people with disabilities to meet their
-                                    needs and
-                                    share
-                                    the joy of the Lord!</p>
-                                <hr class="d-none d-lg-block mb-0 mr-0" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ministry Two Row-->
-            <div class="row justify-content-center no-gutters ">
-                <div class="col-lg-6"><img class="img-fluid" src="images/churchPhotos/WorkProject.jpg" alt="" /></div>
-                <div class="col-lg-6">
-                    <div class="bg-black text-center h-100 ministry">
-                        <div class="d-flex h-100">
-                            <div class="ministry-text w-100 my-auto text-center text-lg-left">
-                                <h4 class="text-white">Let's Get To Work!</h4>
-                                <p class="mb-0 text-white-70">We don't travel empty handed - we come to work! Whatever
-                                    we can do to help our communities we will do!</p>
-                                <hr class="d-none d-lg-block mb-0 ml-0" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Ministry Three Row-->
-            <div class="row justify-content-center no-gutters mb-2 mb-lg-0">
-                <div class="col-lg-6"><img class="img-fluid" src="images/churchPhotos/PastorOnTheRoad.jpg" alt="" />
-                </div>
-                <div class="col-lg-6 order-lg-first">
-                    <div class="bg-black text-center h-100 ministry">
-                        <div class="d-flex h-100">
-                            <div class="ministry-text w-100 my-auto text-center text-lg-right">
-                                <h4 class="text-white">The Good News</h4>
-                                <p class="mb-0 text-white-70">We serve rural villages who have never heard the Gospel
-                                    or have no local church for worship.</p>
-                                <hr class="d-none d-lg-block mb-0 mr-0" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-        </div>
-
-
-        <div class="mx-auto text-center">
-            <a class="btn btn-primary js-scroll-trigger mt-5" href="support.html">Support Our Ministry</a>
-        </div>
-    </section>
-    <!-- Gallery-->
-    <section class="gallery-section" id="gallery">
-        <div class="container">
-
-            <div class="mx-auto text-center">
-                <br>
-                <h1 class="mx-auto my-0 text-uppercase text-white-90" style="font-size: 3rem;">Photo Gallery</h1>
-                <hr>
-            </div>
-
-
-            <!-- Carousel -->
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="8"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="9"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="10"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="11"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="12"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="13"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="14"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="15"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="16"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="17"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="18"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="19"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="20"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="21"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="22"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="23"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="24"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="25"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="26"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="27"></li>
-                    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="28"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="images/churchPhotos2021/IndraAndMan.jpg" class="d-block w-100"
-                            alt="Past Indra And Man">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos2021/baptism.jpg" class="d-block w-100" alt="baptism">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos2021/disabled.jpg" class="d-block w-100" alt="disabled man">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos2021/firepit.jpg" class="d-block w-100" alt="firepit">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos2021/food.jpg" class="d-block w-100" alt="food">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos2021/happygirl.jpg" class="d-block w-100" alt="happy girl">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos2021/jail.jpg" class="d-block w-100" alt="jail">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos2021/kids.jpg" class="d-block w-100" alt="kids">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos2021/newchurch.jpg" class="d-block w-100" alt="new church">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos2021/villagechurch.jpg" class="d-block w-100" alt="village church">
-                    </div>
-                    <!-- older photos -->
-
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/sujan1.jpeg" class="d-block w-100" alt="Bible Study">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/sujan10.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/sujan4.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/sujan5.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/sujan6.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/sujan7.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/sujan8.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/sujan9.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/SujhanOnTheRoad.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/ChurchOutside2.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/HappyBirthday.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/ChurchService.jpg" class="d-block w-100" alt="Church Service">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/Village.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/OnTheRoad.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/YouthBibleStudy.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/Dresses.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/Family.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/IntoTheField.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/churchPhotos/IntoTheCity.jpg" class="d-block w-100" alt="Church Outside">
-                    </div>
-
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </a>
-                <hr>
-            </div>
-
-            <!-- End Carousel -->
-            <br><br><br>
-
-
-
-            <!-- <div class="row">
+                <!-- <div class="row">
 
 
 
@@ -518,90 +1001,115 @@
                     </form>
                 </div>
             </div> -->
-        </div>
-    </section>
-    <!-- Contact-->
-    <section class="contact-section bg-black" id="contact">
-        <div class="mx-auto text-center">
-            <br>
-            <h1 class="mx-auto my-0 text-uppercase text-white-90" style="font-size: 3rem;">Contact Us</h1>
-            <hr>
-        </div>
-        <div class="container">
-            <div class="row">
-                <hr style="color: white;">
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="contact-section bg-black" id="contact">
+            <div class="mx-auto text-center">
+                <br />
+                <h1
+                    class="mx-auto my-0 text-uppercase text-white-90"
+                    style="font-size: 3rem"
+                >
+                    Contact Us
+                </h1>
+                <hr />
+            </div>
+            <div class="container">
+                <div class="row">
+                    <hr style="color: white" />
 
-
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card py-4 h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-envelope text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Email</h4>
-                            <hr class="my-4" />
-                            <div class="small text-black-50"><a
-                                    href="mailto:vision320@gmail.com">vision320ch@gmail.com</a></div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i
+                                    class="fas fa-envelope text-primary mb-2"
+                                ></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50">
+                                    <a href="mailto:vision320@gmail.com"
+                                        >vision320ch@gmail.com</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center mb-0 pb-0">
+                                <i
+                                    class="fab fa-facebook-f text-primary mb-0"
+                                ></i>
+                                <h4 class="text-uppercase mb-0">Facebook</h4>
+                                <hr class="my-4" />
+                                <!-- <div class="small text-black-50">4923 Market Street, Orlando FL</div> -->
+                                <a
+                                    class="mx-4"
+                                    href="https://www.facebook.com/pg/Darshan-Church-Beltar-Nepal-173150410145714"
+                                    target="_blank"
+                                    ><i
+                                        class="fab fa-facebook"
+                                        style="font-size: 3rem"
+                                    ></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i
+                                    class="fas fa-mobile-alt text-primary mb-2"
+                                ></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50">
+                                    +977 986-292-8840
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card py-4 h-100">
-                        <div class="card-body text-center mb-0 pb-0">
-                            <i class="fab fa-facebook-f text-primary mb-0"></i>
-                            <h4 class="text-uppercase mb-0">Facebook</h4>
-                            <hr class="my-4" />
-                            <!-- <div class="small text-black-50">4923 Market Street, Orlando FL</div> -->
-                            <a class="mx-4"
-                                href="https://www.facebook.com/pg/Darshan-Church-Beltar-Nepal-173150410145714"
-                                target="_blank"><i class="fab fa-facebook" style="font-size: 3rem;"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3 mb-md-0">
-                    <div class="card py-4 h-100">
-                        <div class="card-body text-center">
-                            <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                            <h4 class="text-uppercase m-0">Phone</h4>
-                            <hr class="my-4">
-                            <div class="small text-black-50">+977 986-292-8840</div>
+                <div class="social d-flex justify-content-center">
+                    <div class="container">
+                        <div class="social-links">
+                            <a
+                                href="#page-top"
+                                class="back-to-top"
+                                style="scroll-behavior: smooth"
+                            >
+                                <i
+                                    class="fa fa-angle-up"
+                                    aria-hidden="true"
+                                ></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="social d-flex justify-content-center">
-                <div class="container">
-                    <div class="social-links">
-                        <a href="#page-top" class="back-to-top" style="scroll-behavior: smooth;">
-                            <i class="fa fa-angle-up" aria-hidden="true"></i>
-                        </a>
-                    </div>
+        </section>
 
+        <!-- End Sections -->
 
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50">
+            <hr />
+            <div class="container">©2020 | Darshan Church</div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"
+        ></script>
 
-
-
-    <!-- End Sections -->
-
-    <!-- Footer-->
-    <footer class="footer bg-black small text-center text-white-50">
-        <hr>
-        <div class="container">©2020 | Darshan Church</div>
-    </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Third party plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
-
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-</body>
-
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
