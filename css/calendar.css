@@ -287,7 +287,7 @@ tbody tr td {
   } */
 
 /* Div Positioning */
-@media (min-width: 576px) {
+@media (min-width: 676px) {
     /* Div positioning */
     .flex-container {
         display: flex;
